@@ -1,11 +1,5 @@
 import pygame, random
 
-def get_new_value(old_gen, old_automata):
-    # TBC - add code to generate the next row of cells,
-    # then replace the return statement below to
-    # return the updated automata
-    return old_automata
-
 # Define some colors and other constants
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -15,6 +9,29 @@ SQ_LENGTH = 10
 SQ_NUM = 49 # min squares per row/column is 15
 WIN_SIZE = (SQ_NUM+1)*MARGIN + SQ_NUM*SQ_LENGTH
 BTN_SIZE = 30
+
+def get_new_value(old_gen, old_automata):
+    # initialize a set of new automata
+    new_automata = old_automata[:]
+    # calculate the starting point for the new row
+    starting_point = (old_gen * SQ_NUM)
+    # check to make sure its not the final generation
+    if old_gen < (SQ_NUM - 1):
+        # loop through the row
+        for i in range (starting_point, (starting_point + SQ_NUM)):
+            # get cell and left and right neighbours
+            cell = old_automata[i]
+            left_neighbour = old_automata[i-1]
+            right_neighbour = old_automata[i+1]
+            # calculate new value of cell based on Rule 126
+            if left_neighbour and cell and right_neighbour:
+                new_automata[i + SQ_NUM] = 0
+            elif not left_neighbour and not cell and not right_neighbour:
+                new_automata[i + SQ_NUM] = 0
+            else:
+                new_automata[i + SQ_NUM] = 1
+    # return the new automata array
+    return new_automata
 
 pygame.init()
  
