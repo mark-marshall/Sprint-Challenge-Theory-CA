@@ -10,7 +10,7 @@ a. Single regex that matches either of these:
 
 
     ====== ANS ======
-    antelopes?+\srocks\sout
+    antelopes?\srocks?\sout
 
 b. Regex that matches either of:
 
