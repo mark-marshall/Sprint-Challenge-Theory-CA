@@ -55,10 +55,17 @@ a. Draw a state machine that corresponds to the following regex:
   Remember the ε transition can be used to move between states without
   consuming input. 
 
+====== ANS ======
+cd State_Diagrams/Regex.png
+
+
 b. Draw a state machine diagram for the lion and label the transition events that
   cause state transitions.
   
-    A lion can be sleeping, eating, hunting, or preening. 
+    A lion can be sleeping, eating, hunting, or preening.
+
+====== ANS ======
+cd State_Diagrams/Lion.png
 
 
 You are expected to be able to answer all these questions. Your responses contribute to your Sprint Challenge grade. [Skipping this section *will* prevent you from passing this challenge.]
